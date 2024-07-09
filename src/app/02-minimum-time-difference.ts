@@ -7,8 +7,8 @@
 export function findMinDifference(timePoints: string[]): number {
   // Convert each time point to the total minutes from "00:00"
   const timeInMinutes = timePoints.map((time) => {
-    const [hours, minutes] = time.split(":");
-    return Number(hours) * 60 + Number(minutes);
+    const [hours, minutes] = time.split(":").map(Number);
+    return hours * 60 + minutes;
   });
 
   // Sort the array of minutes to facilitate finding the minimum difference
